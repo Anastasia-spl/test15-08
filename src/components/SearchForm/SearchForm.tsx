@@ -54,40 +54,40 @@ export default function SearchForm() {
   return (
     <>
       <h2>Поиск по таблице:</h2>
-     <form onSubmit={handleSearch}>
-      <label className={classes.label}>
-        <span  className={classes.labelText}>Искать по...</span>
-        <select name="column"
-          value={column}
-          onChange={handleColumnChange}
-          className={classes.selectInput}>
-          <option value="name">названию</option>
-          <option value="quantity">количеству</option>
-          <option value="distance">расстоянию</option>
-        </select>
-      </label>
-      <label className={classes.label}>
-        <span className={classes.labelText}>Условие</span> 
-        <select name="condition"
-          value={condition}
-          onChange={handleConditionChange}
-          className={classes.selectInput}>
-          <option value="includes" disabled={column === "name" ? false : true}>содержит</option>
-          <option value="more" disabled={column === "name" ? true : false}>больше</option>
-          <option value="less" disabled={column === "name" ? true : false}>меньше</option>
-          <option value="equal" disabled={column === "name" ? true : false}>равно</option>
-        </select>
-      </label>
-      <label className={classes.label}>
-        <span className={classes.labelText}>Данные для поиска</span>
-        <input type="text"
-          name="value"
-          value={value}
-          onChange={handleValueChange}
-          className={classes.selectInput} />
-      </label>
-      <button type='submit'>Поиск</button>
-    </form>
+      <form onSubmit={handleSearch}>
+        <label className={classes.label}>
+          <span  className={classes.labelText}>Искать по...</span>
+          <select name="column"
+            value={column}
+            onChange={handleColumnChange}
+            className={classes.selectInput}>
+            <option value="name">названию</option>
+            <option value="quantity">количеству</option>
+            <option value="distance">расстоянию</option>
+          </select>
+        </label>
+        <label className={classes.label}>
+          <span className={classes.labelText}>Условие</span> 
+          <select name="condition"
+            value={condition}
+            onChange={handleConditionChange}
+            className={classes.selectInput}>
+            <option value="includes" disabled={column === "name" ? false : true}>содержит</option>
+            <option value="more" disabled={column === "name" ? true : false}>больше</option>
+            <option value="less" disabled={column === "name" ? true : false}>меньше</option>
+            <option value="equal" disabled={column === "name" ? true : false}>равно</option>
+          </select>
+        </label>
+        <label className={classes.label}>
+          <span className={classes.labelText}>Данные для поиска</span>
+          <input type="text"
+            name="value"
+            value={value}
+            onChange={handleValueChange}
+            className={classes.selectInput} />
+        </label>
+        <button type='submit'>Поиск</button>
+      </form>
     </>
   )
 }
